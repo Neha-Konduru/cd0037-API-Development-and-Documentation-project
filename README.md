@@ -54,9 +54,9 @@ By making notes ahead of time, you will practice the core skill of being able to
 
 #### GET '/categories'
 
--Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
-+Request Arguments: None
-+Returns: An object with a single key, categories, that contains an object of id: category_string key:value pairs.
+* Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
+* Request Arguments: None
+* Returns: An object with a single key, categories, that contains an object of id: category_string key:value pairs.
 ```
 {
     'categories': { '1' : "Science",
@@ -70,9 +70,9 @@ By making notes ahead of time, you will practice the core skill of being able to
 
 #### GET '/questions?page=${integer}'
 
-*Fetches a paginated set of questions, a total number of questions, all categories and current category string.
-*Request Arguments: page - integer
-*Returns: An object with 10 paginated questions, total questions, object including all categories, and current category string
+* Fetches a paginated set of questions, a total number of questions, all categories and current category string.
+* Request Arguments: page - integer
+* Returns: An object with 10 paginated questions, total questions, object including all categories, and current category string
 ```
 {
     'questions': [
@@ -97,9 +97,9 @@ By making notes ahead of time, you will practice the core skill of being able to
 
 #### GET '/categories/${id}/questions'
 
-*Fetches questions for a cateogry specified by id request argument
-*Request Arguments: id - integer
-*Returns: An object with questions for the specified category, total questions, and current category string
+* Fetches questions for a cateogry specified by id request argument
+* Request Arguments: id - integer
+* Returns: An object with questions for the specified category, total questions, and current category string
 ```
 {
     'questions': [
@@ -118,21 +118,21 @@ By making notes ahead of time, you will practice the core skill of being able to
 
 #### DELETE '/questions/${id}'
 
-*Deletes a specified question using the id of the question
-*Request Arguments: id - integer
-*Returns: Does not need to return anything besides the appropriate HTTP status code. Optionally can return the id of the question. If you are able to modify the frontend, you can have it remove the question using the id instead of refetching the questions.
+* Deletes a specified question using the id of the question
+* Request Arguments: id - integer
+* Returns: Does not need to return anything besides the appropriate HTTP status code. Optionally can return the id of the question. If you are able to modify the frontend, you can have it remove the question using the id instead of refetching the questions.
 
 #### POST '/quizzes'
 
-*Sends a post request in order to get the next question
-*Request Body:
+* Sends a post request in order to get the next question
+* Request Body:
 ```
 {
     'previous_questions': [1, 4, 20, 15]
     quiz_category': 'current category'
  }
 ```
-*Returns: a single new question object
+* Returns: a single new question object
 ```
 {
     'question': {
@@ -147,8 +147,8 @@ By making notes ahead of time, you will practice the core skill of being able to
 
 #### POST '/questions'
 
-*Sends a post request in order to add a new question
-*Request Body:
+* Sends a post request in order to add a new question
+* Request Body:
 ```
 {
     'question':  'Heres a new question string',
@@ -157,18 +157,18 @@ By making notes ahead of time, you will practice the core skill of being able to
     'category': 3,
 }
 ```
-*Returns: Does not return any new data
+* Returns: Does not return any new data
 
 #### POST '/questions/search'
 
-*Sends a post request in order to search for a specific question by search term
-*Request Body:
+* Sends a post request in order to search for a specific question by search term
+* Request Body:
 ```
 {
     'searchTerm': 'this is the term the user is looking for'
 }
 ```
-*Returns: any array of questions, a number of totalQuestions that met the search term and the current category string
+* Returns: any array of questions, a number of totalQuestions that met the search term and the current category string
 ```
 {
     'questions': [
@@ -196,11 +196,11 @@ Errors are conveyed in JSON format, adhering to the structure below:
 }
 ```
 The API responds with three distinct error types:
-*400: Bad request
-*404: Resource not found
-*405: Method not allowed
-*422: Unprocessablerequest
-*500: Internal server error
+* 400: Bad request
+* 404: Resource not found
+* 405: Method not allowed
+* 422: Unprocessablerequest
+* 500: Internal server error
 
 
 
