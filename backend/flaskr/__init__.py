@@ -94,6 +94,7 @@ def create_app(test_config=None):
             #return data to view
             return jsonify({
                 'success': True,
+                'deleted': question_id
             })
 
         except Exception as e:
@@ -201,9 +202,6 @@ def create_app(test_config=None):
         #fetches category based on id
         category = Category.query.filter_by(id=category_id).one_or_none()
 
-        #abort 404 if no category found
-        if category == None:
-            abort(404)
         try:
             questions = Question.query.filter(
                 Question.category == category_id,
